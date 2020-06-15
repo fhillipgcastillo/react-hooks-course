@@ -1,13 +1,8 @@
-<h1 align="center">
-  <a href="https://tylermcginnis.com"><img src="https://tylermcginnis.com/tylermcginnis_glasses-300.png" alt="TylerMcGinnis.com Logo" width="300"></a>
-  <br>
-</h1>
-
-<h3 align="center">React Hooks Course Project - <a href="https://ui-github-battle.netlify.com/">Github Battle App</a></h3>
+<h3 align="center">React Hooks Course Project Folk - <a href="https://ui-github-battle.netlify.com/">Github Battle App</a></h3>
 
 ### Info
 
-This is the repository for TylerMcGinnis.com's "React Hooks" course project. 
+This is the folked repository for TylerMcGinnis.com's "React Hooks" course project. 
 
 For more information on the course, visit __[tm.dev/courses/react-hooks](https://tm.dev/courses/react-hooks/)__.
 
@@ -17,11 +12,30 @@ This project is a "Github Battle" app. You'll be able to see the most popular re
 
 You can view the final project at __[tm.dev/react-course-project](https://ui-github-battle.netlify.com/)__
 
-### Branches
+### Personal changes
+* Hooks was implemented everywhere
+ * Implemented context to use Theme
+ * Implement reducers
+ * Added custom hooks
+* Improve API to use ti with hooks
+* Implemented Tests
+ * Added jest as tests dependencies
+ * Added Popular Grid Tests
+ * Mock Fetch module
 
-Every (Project) video in the course coincides with a branch. If you want to compare your code with Tyler's or you just want to play around with the code, check out the different branches.
+### Start dev
+npm run start
 
-<img align='center' src='https://user-images.githubusercontent.com/2933430/53434937-df9cc300-39b4-11e9-8e8f-5bdd212cac2d.png' width='200' />
+### Build project
+npm run build
+or
+npm run build-for-windows
+
+### Tests
+* test script for general testing for unique time
+* There is the test:watch to keep watching and running tests for every change we make
+* test:update which updates the snapshots
+
 
 ### Project Preview
 
