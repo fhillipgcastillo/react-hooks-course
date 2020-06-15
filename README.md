@@ -23,6 +23,7 @@ You can view the final project at __[tm.dev/react-course-project](https://ui-git
  * Added Popular Grid Tests
  * Mock Fetch module
 
+## Scripts
 ### Start dev
 npm run start
 
