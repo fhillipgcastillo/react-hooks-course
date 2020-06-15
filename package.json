@@ -9,7 +9,7 @@
     "build-for-windows": "SET NODE_ENV='production' && webpack",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:update": "jest -U",
+    "test:update": "jest -u",
     "test:coverage": "jest --coverage"
   },
   "env": [

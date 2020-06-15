@@ -11,7 +11,7 @@ import Tooltip from "./Tooltip";
 
 export default function ReposGrid({ repos=[] }) {
   return (
-    <ul data-testId="repos-grid" className="grid space-around">
+    <ul data-testid="repos-grid" id="repos-grid" className="grid space-around">
       {repos.map((repo, index) => {
         const {
           name,
@@ -23,7 +23,7 @@ export default function ReposGrid({ repos=[] }) {
         } = repo;
         const { login, avatar_url } = owner;
         return (
-          <li key={html_url} data-testId={login}>
+          <li key={html_url} data-testid={login}>
             <Card
               header={`#${index + 1}`}
               avatar={avatar_url}
