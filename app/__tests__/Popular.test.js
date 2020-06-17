@@ -1,48 +1,53 @@
 import React from "react";
 import { act, render, cleanup } from "@testing-library/react";
 import { fetchPopularRepos } from "../utils/api";
-import Popular from "../components/Popular";
 import ReposGrid from "../components/ReposGrid";
 import { ThemeProvider } from "../contexts/theme";
 import { readFileSync } from "fs";
 import path from "path";
+import fetchMock from "jest-fetch-mock";
 
-// Mocking Global fetch
-jest.mock("node-fetch");
-import fetch, { Response } from "node-fetch";
+fetchMock.enableMocks();
 
-const AllPopular = JSON.parse(
-  readFileSync(path.join(__dirname, "allpopular.json")).toString()
-);
+beforeEach(() => {
+  fetch.mockClear();
+});
 
-fetch.mockReturnValue(
-  Promise.resolve({
-    json: () => Promise.resolve(AllPopular),
-  })
-);
-
-//this is necesary to be used by the other places that fetch the data
-global.fetch = fetch;
-// End mocking fetch
-
-let populars;
 afterEach(cleanup);
 
-test("Test popular repos", (done) => {
+let populars;
+
+// TODO: create a function that tha mock depending of the language as example
+
+it("Should get All repose", (done) => {
+  fetch.mockResponseOnce(
+    readFileSync(path.join(__dirname, "./allpopular.json")).toString()
+  );
+
   fetchPopularRepos("All").then((repos) => {
     populars = repos;
     const language = "All";
-    const apiCall = `https://api.github.com/search/repositories?q=stars:%3E1+language:${language}&sort=stars&order=desc&type=Repositories`;
-    const { getByTestId } = render(
-      <ThemeProvider value={"light"}>
-        <ReposGrid repos={repos} />
-      </ThemeProvider>
-    );
+    const allReposApiUri = `https://api.github.com/search/repositories?q=stars:%3E1+language:${language}&sort=stars&order=desc&type=Repositories`;
+    expect(fetch).toHaveBeenCalledWith(allReposApiUri);
 
-    const reposeGrid = getByTestId("repos-grid");
-    expect(reposeGrid.children.length).toEqual(repos.length);
-    expect(fetch).toHaveBeenCalledWith(apiCall);
-    expect(reposeGrid).toMatchInlineSnapshot();
     done();
   });
+});
+
+it("Should Repos Grid render the same amount of repos as the api response", (done) => {
+  fetch.mockResponseOnce(
+    readFileSync(path.join(__dirname, "./allpopular.json")).toString()
+  );
+  const repos = populars;
+
+  const { getByTestId } = render(
+    <ThemeProvider value={"light"}>
+      <ReposGrid repos={repos} />
+    </ThemeProvider>
+  );
+
+  const reposeGrid = getByTestId("repos-grid");
+  expect(reposeGrid.children.length).toEqual(repos.length);
+  // expect(reposeGrid).toMatchInlineSnapshot();
+  done();
 });
