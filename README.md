@@ -14,14 +14,18 @@ You can view the final project at __[tm.dev/react-course-project](https://ui-git
 
 ### Personal changes
 * Hooks was implemented everywhere
- * Implemented context to use Theme
- * Implement reducers
- * Added custom hooks
+  * Implemented context to use Theme
+  * Implement reducers
+  * Added custom hooks
 * Improve API to use ti with hooks
 * Implemented Tests
- * Added jest as tests dependencies
- * Added Popular Grid Tests
- * Mock Fetch module
+  * Added jest as tests dependencies
+  * Added Popular Grid Tests
+  * Mocked Fetch module
+* Apply Redux
+  * Added Store
+  * Addd actions, creators and types
+  * Created and Adapted react hook reducers to redux reducers
 
 ## Scripts
 ### Start dev

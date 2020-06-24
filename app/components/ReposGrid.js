@@ -8,6 +8,7 @@ import {
 import PropTypes from "prop-types";
 import Card from "./Card";
 import Tooltip from "./Tooltip";
+import { useSelector } from "react-redux";
 
 export default function ReposGrid({ repos=[] }) {
   return (

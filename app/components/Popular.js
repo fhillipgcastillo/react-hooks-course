@@ -2,8 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import { fetchPopularRepos } from "../utils/api";
 import Loading from "./Loading";
-import { popularReducer } from "../reducers/popularReducer";
+import popularReducer from "../reducers/popularReducer";
 import ReposGrid from "./ReposGrid";
+import { useDispatch, useSelector } from "react-redux";
+import { RESULTS_FETCH_SUCCEDED } from "../actions/actionTypes";
+import { fetchSuccess } from "../actions/popularActionCreators";
 
 function LangaugesNav({ selected, onUpdateLanguage }) {
   const languages = ["All", "JavaScript", "Ruby", "Java", "CSS", "Python"];
@@ -30,10 +33,10 @@ LangaugesNav.propTypes = {
   onUpdateLanguage: PropTypes.func.isRequired,
 };
 
-
 export default function Popular() {
   const [selectedLanguage, setSelectedLanguage] = React.useState("All");
-  const [state, distpatch] = React.useReducer(popularReducer, { error: null });
+  const state = useSelector((state) => state.popular);
+  const dispatch = useDispatch();
   const fetchedLanguages = React.useRef([]);
 
   const isLoading = () => {
@@ -41,14 +44,12 @@ export default function Popular() {
   };
 
   React.useEffect(() => {
-    if (fetchedLanguages.current.includes(selectedLanguage)===false) {
+    if (fetchedLanguages.current.includes(selectedLanguage) === false) {
       fetchedLanguages.current.push(selectedLanguage);
 
       fetchPopularRepos(selectedLanguage)
-        .then((repos) =>
-          distpatch({ type: "success", selectedLanguage, repos })
-        )
-        .catch((error) => distpatch({ type: "error", error }));
+        .then((repos) => dispatch(fetchSuccess(selectedLanguage, repos)))
+        .catch((error) => dispatch(fetchError(error)));
     }
   }, [selectedLanguage, fetchedLanguages]);
 

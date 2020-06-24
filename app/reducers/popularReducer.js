@@ -1,10 +1,12 @@
-export function popularReducer(state, action) {
+import { POPULAR_FETCH_SUCCEDED, POPULAR_FETCH_ERROR } from "../actions/actionTypes";
+
+export default function popularReducer(state = {}, action) {
   switch (action.type) {
-    case "success":
+    case POPULAR_FETCH_SUCCEDED:
       return { ...state, [action.selectedLanguage]: action.repos };
-    case "error":
+    case POPULAR_FETCH_ERROR:
       return { ...state, error: action.error.message };
     default:
-      throw new Error("Action doesn exist");
+      return state;
   }
 }
