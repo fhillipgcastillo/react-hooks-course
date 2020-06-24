@@ -1,9 +1,15 @@
-export function resultsReducer(prevState, action) {
+import {
+  RESULTS_FETCH_SUCCEDED,
+  RESULTS_FETCH_ERROR,
+} from "../actions/actionTypes";
+
+export default function resultsReducer(prevState, action) {
   /**
    * TODO: standarize action to only receive type and payload
-  */
+   */
+  
   switch (action.type) {
-    case "success":
+    case RESULTS_FETCH_SUCCEDED:
       return {
         ...prevState,
         winner: action.players[0],
@@ -11,14 +17,17 @@ export function resultsReducer(prevState, action) {
         error: null,
         loading: false,
       };
-    case "error":
+    case RESULTS_FETCH_ERROR:
       return {
         ...prevState,
         error: action.error,
         loading: false,
       };
     default:
-      throw new Error(action.error);
+      return {
+        ...prevState,
+        error: null,
+        loading: true,
+      };
   }
 }
-;
