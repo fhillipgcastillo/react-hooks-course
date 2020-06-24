@@ -19,8 +19,8 @@ function App() {
   };
 
   return (
-    <Router>
-      <Provider store={store}>
+    <Provider store={store}>
+      <Router>
         <ThemeProvider value={theme}>
           <div className={theme}>
             <div className="container">
@@ -37,8 +37,8 @@ function App() {
             </div>
           </div>
         </ThemeProvider>
-      </Provider>
-    </Router>
+      </Router>
+    </Provider>
   );
 }
 

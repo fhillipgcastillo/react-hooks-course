@@ -1,1 +1,10 @@
-export const ACTION = "ACTION";
+/**
+ * this contains all shared actions types
+ */
+//POPULARS
+export const POPULAR_FETCH_SUCCEDED = "POPULAR_FETCH_SUCCEDED";
+export const POPULAR_FETCH_ERROR = "POPULAR_FETCH_ERROR";
+
+//RESULTS
+export const RESULTS_FETCH_SUCCEDED = "RESULTS_FETCH_SUCCEDED";
+export const RESULTS_FETCH_ERROR = "RESULTS_FETCH_ERROR";
