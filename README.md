@@ -2,7 +2,7 @@
 
 ### Info
 
-This is the folked repository for TylerMcGinnis.com's "React Hooks" course project. 
+This is the folked repository for TylerMcGinnis.com's "React Battle" project to refactor. 
 
 For more information on the course, visit __[tm.dev/courses/react-hooks](https://tm.dev/courses/react-hooks/)__.
 
