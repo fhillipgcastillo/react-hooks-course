@@ -22,5 +22,5 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     - name: Run Jest tests
       run: |
-        npm intall --production
+        npm install --production
         npm run test
