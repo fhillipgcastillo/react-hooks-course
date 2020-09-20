@@ -20,6 +20,11 @@ jobs:
 
     steps:
     # Steps represent a sequence of tasks that will be executed as part of the job
+    - name: Checkout
+      uses: actions/Checkout@v2
+      with:
+        persist-credentials: false
+
     - name: Run Jest tests
       run: |
         npm install --production
