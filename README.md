@@ -13,7 +13,6 @@ This project is a "Github Battle" app. You'll be able to see the most popular re
 You can view the final project at __[tm.dev/react-course-project](https://ui-github-battle.netlify.com/)__
 
 ### Personal changes
-![Pull Request & Merges Test Runner](https://github.com/fhillipgcastillo/react-hooks-course/workflows/Pull%20Request%20&%20Merges%20Test%20Runner/badge.svg)
 
 * Hooks was implemented everywhere
   * Implemented context to use Theme
