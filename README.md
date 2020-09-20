@@ -14,6 +14,8 @@ You can view the final project at __[tm.dev/react-course-project](https://ui-git
 
 ### Personal changes
 
+![Tests](https://github.com/fhillipgcastillo/react-hooks-course/workflows/Tests/badge.svg?branch=master)
+
 * Hooks was implemented everywhere
   * Implemented context to use Theme
   * Implement reducers
