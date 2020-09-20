@@ -1,8 +1,8 @@
-<h3 align="center">React Hooks Course Project Folk - <a href="https://ui-github-battle.netlify.com/">Github Battle App</a></h3>
+<h3 align="center">React Hooks Course Project Folked - <a href="https://ui-github-battle.netlify.com/">Github Battle App</a></h3>
 
 ### Info
 
-This is the folked repository for TylerMcGinnis.com's "React Battle" project to refactor. 
+This is the folked repository for TylerMcGinnis.com's "React Battle" project to be used  as basecode for some refactor and new implementations as React Hooks, Tests and much more. 
 
 For more information on the course, visit __[tm.dev/courses/react-hooks](https://tm.dev/courses/react-hooks/)__.
 
@@ -13,6 +13,7 @@ This project is a "Github Battle" app. You'll be able to see the most popular re
 You can view the final project at __[tm.dev/react-course-project](https://ui-github-battle.netlify.com/)__
 
 ### Personal changes
+
 * Hooks was implemented everywhere
   * Implemented context to use Theme
   * Implement reducers
