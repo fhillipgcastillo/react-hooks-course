@@ -46,6 +46,10 @@ li {
   color: inherit;
 }
 
+.nav-link:hover {
+  cursor: pointer;
+}
+
 .nav li {
   margin-right: 10px;
 }
