@@ -133,7 +133,17 @@ li {
 }
 
 .instructions-container {
-  margin: 100px 0;
+  margin: 50px 0;
+  border-radius: 35px 10px;
+  padding-top: 20px;
+}
+
+.dark .instructions-container {
+  background-color: #334348;
+}
+
+.light .instructions-container {
+  background-color: #ececec;;
 }
 
 .container-sm {

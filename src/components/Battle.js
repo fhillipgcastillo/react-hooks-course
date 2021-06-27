@@ -6,9 +6,8 @@ import {
   FaTimesCircle,
 } from "react-icons/fa";
 import PropTypes from "prop-types";
-import Results from "./Results";
 import ThemeContext from "../contexts/theme";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 function Instructions() {
   const { theme } = React.useContext(ThemeContext);
@@ -157,13 +156,12 @@ export default function Battle() {
 
         {playerOne && playerTwo && (
           <Link
-            className="btn dark-btn btn-space"
-            to={{
+            href={{
               pathname: "/battle/results",
-              search: `?playerOne=${playerOne}&playerTwo=${playerTwo}`,
+              query: `playerOne=${playerOne}&playerTwo=${playerTwo}`,
             }}
           >
-            Battle
+            <a className="btn dark-btn btn-space">Battle</a>
           </Link>
         )}
       </div>

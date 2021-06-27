@@ -4,16 +4,15 @@ import {
   FaBriefcase,
   FaUsers,
   FaUserFriends,
-  FaCode,
   FaUser,
 } from "react-icons/fa";
 import Card from "./Card";
 import PropTypes from "prop-types";
 import Loading from "./Loading";
 import Tooltip from "./Tooltip";
-import queryString from "query-string";
-import { Link } from "react-router-dom";
 import { useResultsPlayerReducer } from "../hooks/useResultsPlayerReducer";
+import Link from "next/link";
+import { useRouter } from 'next/router'
 
 function ProfileList({ profile }) {
   return (
@@ -54,9 +53,10 @@ ProfileList.propTypes = {
   profile: PropTypes.object.isRequired,
 };
 
-export default function Results({ location }) {
-  const { playerOne, playerTwo } = queryString.parse(location.search);
-
+export default function Results({ query }) {
+  const router = useRouter ();
+  const { playerOne, playerTwo } = router.query;
+  console.log(router.query);
   // state, reducerDispatcher
   const [{ winner, loser, error, loading }] = useResultsPlayerReducer(playerOne, playerTwo );
   
@@ -90,8 +90,8 @@ export default function Results({ location }) {
           <ProfileList profile={loser.profile} />
         </Card>
       </div>
-      <Link to="/battle" className="btn dark-btn btn-space">
-        Reset
+      <Link href="/battle">
+        <a  className="btn dark-btn btn-space">Reset</a>
       </Link>
     </React.Fragment>
   );
